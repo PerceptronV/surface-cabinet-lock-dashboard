@@ -33,8 +33,19 @@
   </div>
 
   <!-- Data from sensors @ <= 30s -->
-  <div id="sensors-container">
-
+  <div id="sensors-container" class="d-flex flex-row align-items-stretch justify-content-evenly">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body d-flex flex-column">
+        <h6 class="card-title">MQ2 Gas Sensor</h6>
+        <p class="card-text display-5" id="mq2-val"></p>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body d-flex flex-column">
+        <h6 class="card-title">FSR Force Sensor</h6>
+        <p class="card-text display-5" id="fsr-val"></p>
+      </div>
+    </div>
   </div>
 
   <!-- Locking / Unlocking -->
@@ -104,6 +115,7 @@
   <script src="main.js"></script>
   <script src="notifications.js"></script>
   <script src="walerts.js"></script>
+  <script src="sensors.js"></script>
 </body>
 
 </html>

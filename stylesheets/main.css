@@ -7,6 +7,8 @@
 #warnings-container {
     margin-top: 20px;
     flex-direction: column;
+    max-height: 200px;
+    overflow-y: scroll;
 }
 
 .walert {
@@ -15,17 +17,24 @@
     padding-left: 5px;
     padding-right: 5px;
     margin: 5px;
+    font-size: 20px;
 }
 
 #alerts-container {
     flex-direction: column;
+    max-height: 150px;
+    overflow-y: scroll;
+}
+
+#sensors-container {
+    margin-top: 10px;
 }
 
 #power-container {
     width: 100%;
     text-align: center;
     position: fixed;
-    bottom: 150px;
+    bottom: 70px;
     left: 0px;
 }
 
@@ -52,32 +61,42 @@
     font-size: 20px;
 }
 
-@media only screen and (min-width: 667px) {
-    #power-container {
-        width: 100%;
-        text-align: center;
-        position: fixed;
-        bottom: 150px;
-        left: 0px;
+@media only screen and (max-height: 668px) {
+    .walert {
+        font-size: 15px;
     }
-    
+
+    #warnings-container {
+        padding-top: 40px;
+        max-height: 120px;
+    }
+
+    #alerts-container {
+        max-height: 100px;
+    }
+
+    #power-container {
+        bottom: 50px;
+    }
+
     #power-button {
-        width: 250px;
-        height: 250px;
-        text-align: center;
-        border-radius: 125px;
-        border-width: 5px;
+        width: 170px;
+        height: 170px;
+        border-radius: 85px;
+        border-width: 2px;
     }
     
     #power-icon {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
     }
     
     #power-text {
-        padding: 0px;
-        font-size: 50px;
-        vertical-align: top;
+        font-size: 30px;
+    }
+
+    #toast-msg {
+        font-size: 15px;
     }
 }
 
@@ -92,17 +111,19 @@
 
     #warnings-container {
         flex-direction: row;
+        overflow-y: hidden;
     }
 
     #alerts-container {
         flex-direction: row;
+        overflow-y: hidden;
     }
 
     #power-container {
         width: 100%;
         text-align: center;
         position: fixed;
-        bottom: 100px;
+        bottom: 70px;
         left: 0px;
     }
 }

@@ -39,7 +39,7 @@ firebase.database().ref('deployment/alerts').on('value', (snapshot) => {
 
     for (k in keys) {
         var text = keys[k] + ": " + snapval[keys[k]];
-        warnings_div.appendChild(newWalertDiv(text, "yellow"));
+        alerts_div.appendChild(newWalertDiv(text, "yellow"));
         notify("Surface Cabinet - " + text);
     }
 });
