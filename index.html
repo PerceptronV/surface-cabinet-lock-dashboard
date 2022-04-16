@@ -12,14 +12,54 @@
   <link href="stylesheets/global.css" rel="stylesheet">
   <link href="stylesheets/main.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>DEBUG=true;</script>
+  <script>DEBUG=true; USE_NOTIFICATIONS=true;</script>
 </head>
 
 <body>
-  <div id="top_tray">
-    <button type="button" class="btn btn-outline-secondary" onclick="sign_out()">Sign Out</button>
+  <div id="top_tray" class="d-flex flex-row justify-content-between">
+    <div id="clock-container">
+      <button id="clock-button" type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Modal">
+        <svg id="clock-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+          <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+        </svg>
+      </button>
+    </div>
+    <div id="sign-out-container">
+      <button type="button" class="btn btn-outline-secondary" onclick="sign_out()">Sign Out</button>
+    </div>
   </div>
 
+  <!-- Time settings -->
+  <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">Time Settings</h5>
+          <button id="modal-close-button" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="revertLocktimes()" ></button>
+        </div>
+        <div class="modal-body">
+          <p id="modal-desc">Auto lock and unlock time for cabinet lock.</p>
+          <div id="timepicker-container" class="d-flex flex-row justify-content-around">
+            <div id="locktime-container" class="card text-center">
+              <label for="locktime" id="locktime-label" class="card-header time-label">Auto-lock time:</label>
+              <input type="time" id="locktime" class="time-input" name="locktime" required>
+            </div>
+            <div id="unlocktime-container" class="card text-center">
+              <label for="unlocktime" id="unlocktime-label" class="card-header time-label">Auto-unlock time:</label>
+              <input type="time" id="unlocktime" class="time-input" name="unlocktime" required>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="revertLocktimes()" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" onclick="updateLocktimes()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome -->
   <div id="welcome">
     <h1 id="apploc" class="display-3">Home</h1>
     <h1 id="appname">Surface Cabinet Lock Online Control</h1>
@@ -36,13 +76,13 @@
   <div id="sensors-container" class="d-flex flex-row align-items-stretch justify-content-evenly">
     <div class="card" style="width: 18rem;">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">MQ2 Gas Sensor</h6>
+        <h6 class="card-title" id="mq2-title">MQ2 Gas Sensor</h6>
         <p class="card-text display-5" id="mq2-val"></p>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">FSR Force Sensor</h6>
+        <h6 class="card-title" id="fsr-title">FSR Force Sensor</h6>
         <p class="card-text display-5" id="fsr-val"></p>
       </div>
     </div>
@@ -112,10 +152,11 @@
 
   <script src="data.js"></script>
   <script src="utils.js"></script>
-  <script src="main.js"></script>
   <script src="notifications.js"></script>
+  <script src="main.js"></script>
   <script src="walerts.js"></script>
   <script src="sensors.js"></script>
+  <script src="time.js"></script>
 </body>
 
 </html>

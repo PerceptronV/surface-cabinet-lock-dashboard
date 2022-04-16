@@ -27,7 +27,7 @@ firebase.database().ref('deployment/warnings').on('value', (snapshot) => {
     for (k in keys) {
         var text = keys[k] + ": " + snapval[keys[k]];
         warnings_div.appendChild(newWalertDiv(text, "red"));
-        notify("Surface Cabinet - " + text);
+        notify(text);
     }
 });
 
@@ -40,6 +40,6 @@ firebase.database().ref('deployment/alerts').on('value', (snapshot) => {
     for (k in keys) {
         var text = keys[k] + ": " + snapval[keys[k]];
         alerts_div.appendChild(newWalertDiv(text, "yellow"));
-        notify("Surface Cabinet - " + text);
+        notify(text);
     }
 });
