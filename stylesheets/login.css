@@ -1,0 +1,111 @@
+body {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+}
+
+#loader {
+    position: fixed;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+#firebase-auth-container {
+    width: 100%;
+    margin: auto;
+    margin-top: 70px;
+    font-size: 30px;
+}
+
+#username_label {
+    width: 100%;
+    text-align: center;
+}
+
+#username {
+    font-size: 25px;
+}
+
+#password_label {
+    width: 100%;
+    text-align: center;
+}
+
+#password {
+    font-size: 25px;
+}
+
+#pass {
+    font-size: 20px;
+}
+
+#warning {
+    display: none;
+    color: red;
+    font-size: 17px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+#button_container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#sign-in-button {
+    font-size: 25px;
+    margin: auto;
+}
+
+
+@media only screen and (min-width: 768px) {
+    #firebase-auth-container {
+        width: 50%;
+        margin: auto;
+        margin-top: 70px;
+        font-size: 30px;
+    }
+    
+    #username_label {
+        width: 100%;
+        text-align: left;
+    }
+    
+    #username {
+        font-size: 25px;
+    }
+    
+    #password_label {
+        width: 100%;
+        text-align: left;
+    }
+    
+    #password {
+        font-size: 25px;
+    }
+    
+    #pass {
+        font-size: 20px;
+    }
+    
+    #warning {
+        display: none;
+        color: red;
+        font-size: 17px;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    #button_container {
+        text-align: right;
+        margin-top: 50px;
+    }
+    
+    #sign-in-button {
+        font-size: 25px;
+        margin: auto;
+    }
+}

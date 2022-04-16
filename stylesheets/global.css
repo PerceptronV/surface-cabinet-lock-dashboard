@@ -1,0 +1,64 @@
+@font-face {
+    font-family: BRCursive;
+    src: url(fonts/BeauRivage.ttf);
+}
+
+@font-face {
+    font-family: Quicksand;
+    src: url(fonts/Quicksand.ttf);
+}
+
+body {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+#welcome {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#apploc {
+    font-size: 50px;
+    font-family: BRCursive;
+}
+
+#appname {
+    font-size: 20px;
+    font-family: Quicksand;
+}
+
+#footer {
+    position: fixed;
+    bottom: 20px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 30px;
+    }
+    
+    #welcome {
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    #apploc {
+        font-size: 60px;
+    }
+    
+    #appname {
+        font-size: 30px;
+    }
+
+    #footer {
+        font-size: 17px;
+    }
+}
